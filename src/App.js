@@ -4,7 +4,6 @@ import { PersistGate } from 'redux-persist/es/integration/react'
 
 import reduxStore from './Redux'
 import RootContainer from './Containers/RootContainer'
-import Loading from './Components/Loading'
 
 const { persistor, store } = reduxStore()
 
@@ -17,7 +16,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <PersistGate
-          loading={<Loading />}
+          loading={<h3>Loading...</h3>}
           onBeforeLift={onBeforeLift}
           persistor={persistor}>
           <RootContainer />

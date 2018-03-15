@@ -1,5 +1,4 @@
-#!/ usr/bin/env node
-
+#!/usr/bin/env node
 let shell = require('shelljs')
 let colors = require('colors')
 let fs = require('fs-extra')
@@ -69,7 +68,12 @@ const updateTemplates = () => {
       files.forEach((file, i) => {
         promises[i] = new Promise(res => {
           const { fileName, fileContent } = file
-          if (folderName) {
+          if (folderName === 'root') {
+            fs.writeFile(`${appDirectory}/src/${fileName}`, fileContent, function (err) {
+              if (err) { return console.log(err) }
+              res()
+            })
+          } else {
             fs.ensureDir(`${appDirectory}/src/${folderName}`)
             .then(() => {
               fs.writeFile(`${appDirectory}/src/${folderName}/${fileName}`, fileContent, function (err) {
@@ -79,11 +83,6 @@ const updateTemplates = () => {
             })
             .catch(err => {
               if (err) { return console.log(err) }
-            })
-          } else {
-            fs.writeFile(`${appDirectory}/src/${fileName}`, fileContent, function (err) {
-              if (err) { return console.log(err) }
-              res()
             })
           }
         })
@@ -103,7 +102,9 @@ const run = async () => {
   await installDevDependencies()
   await installPackages()
   await updateTemplates()
-  console.log('\nAll done! Hack away\n'.green)
+  console.log(`\nTo start run cd ${appName} && yarn start`.green)
+  console.log(`Or cd ${appName} && npm start`.green)
+  console.log('All done! Hack away'.green)
   console.log('🔥'.repeat(10))
 }
 run()

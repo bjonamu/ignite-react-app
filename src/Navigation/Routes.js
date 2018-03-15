@@ -4,8 +4,6 @@ import Loadable from 'react-loadable'
 import Loading from './Loading'
 import LandingPage from '../Routes/LandingPage'
 
-import Authenticated from '../Containers/AuthenticatedHOC'
-
 const AsyncNextPage = Loadable({
   loader: () => import('../Routes/NextPage'),
   loading: Loading

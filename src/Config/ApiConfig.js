@@ -1,5 +1,5 @@
 module.exports = `const ApiConfig = {
-  baseUrl: ''
+  baseURL: 'https://example.com'
 }
 
 export default ApiConfig

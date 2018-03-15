@@ -13,7 +13,7 @@ const AppNavigation = () => (
     <Wrapper>
       <Helmet
         defaultTitle={AppConfig.appName}
-        titleTemplate={\`AppConfig.appName  | %s\`}
+        titleTemplate={\`\${AppConfig.appName}  | %s\`}
       />
       <Switch>
         {Routes.map((route, i) => <Route key={i} {...route} />)}

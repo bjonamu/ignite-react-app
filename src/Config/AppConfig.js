@@ -1,5 +1,5 @@
 module.exports = `const AppConfig = {
-  appName: 'My ignite react app'
+  appName: 'IgniteReactApp'
 }
 
 export default AppConfig

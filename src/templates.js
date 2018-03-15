@@ -9,6 +9,10 @@ module.exports = [
       {
         fileName: 'index.js',
         fileContent: require('./index.js')
+      },
+      {
+        fileName: 'index.css',
+        fileContent: require('./index.css.js')
       }
     ]
   },
@@ -45,10 +49,6 @@ module.exports = [
       {
         fileName: 'DevConfig.js',
         fileContent: require('./Config/DevConfig')
-      },
-      {
-        fileName: 'AppConfig.js',
-        fileContent: require('./Config/AppConfig')
       },
       {
         fileName: 'ReduxPersistConfig.js',
@@ -169,8 +169,74 @@ module.exports = [
         fileContent: require('./Routes/NextPage')
       },
       {
+        fileName: 'NoMatch.js',
+        fileContent: require('./Routes/NoMatch')
+      },
+      {
         fileName: 'README.md',
         fileContent: require('./Routes/README')
+      }
+    ]
+  },
+  // Sagas
+  {
+    folderName: 'Sagas',
+    files: [
+      {
+        fileName: 'index.js',
+        fileContent: require('./Sagas/index.js')
+      },
+      {
+        fileName: 'LoginSagas.js',
+        fileContent: require('./Sagas/LoginSagas')
+      },
+      {
+        fileName: 'StartupSagas.js',
+        fileContent: require('./Sagas/StartupSagas')
+      },
+      {
+        fileName: 'README.md',
+        fileContent: require('./Sagas/README')
+      }
+    ]
+  },
+  // Services
+  {
+    folderName: 'Services',
+    files: [
+      {
+        fileName: 'Api.js',
+        fileContent: require('./Services/Api')
+      },
+      {
+        fileName: 'RehydrationServices.js',
+        fileContent: require('./Services/RehydrationServices')
+      },
+      {
+        fileName: 'README.md',
+        fileContent: require('./Services/README')
+      }
+    ]
+  },
+  // Themes
+  {
+    folderName: 'Themes',
+    files: [
+      {
+        fileName: 'Colors.js',
+        fileContent: require('./Themes/Colors')
+      },
+      {
+        fileName: 'index.js',
+        fileContent: require('./Themes/index.js')
+      },
+      {
+        fileName: 'Metrics.js',
+        fileContent: require('./Themes/Metrics')
+      },
+      {
+        fileName: 'README.md',
+        fileContent: require('./Themes/README')
       }
     ]
   },
@@ -178,6 +244,10 @@ module.exports = [
   {
     folderName: 'Utils',
     files: [
+      {
+        fileName: 'ImmutablePersistenceTransform.js',
+        fileContent: require('./Utils/ImmutablePersistenceTransform')
+      },
       {
         fileName: 'README.md',
         fileContent: require('./Utils/README')
