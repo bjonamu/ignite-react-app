@@ -1,0 +1,26 @@
+{
+  "name": "ignite-react-app",
+  "version": "0.1.0",
+  "description": "An unfair advantage to starting up your react web apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "boilerplate",
+    "ignite",
+    "react",
+    "reactjs",
+    "generator"
+  ],
+  "author": "Blessing Jonamu",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "fs-extra": "^5.0.0",
+    "shelljs": "^0.8.1"
+  },
+  "bin": {
+    "ignite-react-app": "index.js"
+  }
+}
