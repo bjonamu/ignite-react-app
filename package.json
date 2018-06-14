@@ -2,7 +2,6 @@
   "name": "ignite-react-app",
   "version": "0.2.0",
   "description": "ignite-react-app (ir-app) CLI",
-  "private": true,
   "bin": {
     "ir-app": "bin/ignite-react-app"
   },
