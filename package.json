@@ -1,30 +1,51 @@
 {
   "name": "ignite-react-app",
-  "version": "0.1.1",
-  "description": "An unfair advantage to starting up your react web apps",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bjonamu/ignite-react-app"
+  "version": "0.1.0",
+  "description": "ignite-react-app (ir-app) CLI",
+  "private": true,
+  "bin": {
+    "ir-app": "bin/ignite-react-app"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write **/*.{js,json} && standard --fix",
+    "lint": "standard",
+    "test": "ava",
+    "watch": "ava --watch",
+    "coverage": "nyc ava"
   },
-  "keywords": [
-    "boilerplate",
-    "ignite",
-    "react",
-    "reactjs",
-    "generator"
+  "repository": "bjonamu/ignite-react-app",
+  "author": {
+    "name": "Blessing Jonamu",
+    "email": "blessing.jonamu@gmail.com",
+    "url": "https://github.com/bjonamu"
+  },
+  "files": [
+    "LICENSE",
+    "readme.md",
+    "docs",
+    "bin",
+    "src"
   ],
-  "author": "Blessing Jonamu",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "colors": "^1.1.2",
-    "fs-extra": "^5.0.0",
-    "shelljs": "^0.8.1"
+    "fs-jetpack": "^1.3.0",
+    "gluegun": "next",
+    "gluegun-patching": "^0.3.0",
+    "minimist": "^1.2.0",
+    "pretty-error": "^2.1.1",
+    "ramda": "^0.25.0",
+    "ramdasauce": "^2.1.0",
+    "shelljs": "^0.8.2",
+    "which": "^1.3.0"
   },
-  "bin": {
-    "ignite-react-app": "index.js"
+  "devDependencies": {
+    "standard": "^10.0.0",
+    "babel-eslint": "^8.0.1",
+    "prettier": "^1.7.4",
+    "ava": "^0.22.0",
+    "nyc": "^11.2.1"
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }
