@@ -2,9 +2,9 @@
 
 A CLI for ignite-react-app (ir-app).
 
-This CLI tool in not a replacement for `create-react-app`. In fact it requires that 'create-react-app` be installed globally on your machine.
+This CLI tool in not a replacement for `create-react-app`. In fact it requires that `create-react-app` be installed globally on your machine.
 
-`ignite-react-app` extends `create-react-app` by adding a boilerplate for creat-react-app.
+`ignite-react-app` extends `create-react-app` by adding a boilerplate and generators
 
 ### Quick Example
 
@@ -27,7 +27,8 @@ $ ir-app saga Comment
 
 ## :heart: Special Thanks :heart:
 
-- Infinite Red, Inc. (<https://github.com/infinitered>)
+- Facebook (<https://github.com/facebook>) for building the incredible create-react-app
+- Infinite Red, Inc. (<https://github.com/infinitered>) for the inspiration
 
 ## Backers/Contrbutors
 
