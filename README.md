@@ -8,21 +8,40 @@ This CLI tool in not a replacement for `create-react-app`. In fact it requires t
 
 ### Quick Example
 
-If you'd like the latest and greatest [boilerplate](https://www.npmjs.com/package/ir-app-boilerplate-adam):
-
 ```
 $ npm install -g ignite-react-app
-$ ir-app new my-app
-  ( The `Adam` boilerplate is used for now )
+$ ir-app new my-awesome-app
+  ( The `Adam` boilerplate is the default )
 $ cd my-app
 $ ir-app component Comment
-  ( generates a new component => Comment )
+  ( Generates a new component => Comment )
 $ ir-app container Comment
   ( Generates a new container => CommentContainer )
 $ ir-app redux Comment
   ( Generates a new redux => CommentRedux )
 $ ir-app saga Comment
   ( Generates a new saga => CommentSagas )
+$ ir-app g comp cont redux saga Comment
+  ( Generates a new component => Comment )
+  ( Generates a new container => CommentContainer )
+  ( Generates a new redux => CommentRedux )
+  ( Generates a new saga => CommentSagas )
+```
+
+You can also generate layouts:
+```
+$ ir-app layout Users
+```
+## :plate_with_cutlery: Boilerplates :plate_with_cutlery:
+
+| Name | Description |
+|------|-------------|
+| [ir-app-boilerplate-adam](https://github.com/bjonamu/ir-app-boilerplate-adam) | Redux & Sagas |
+| [ir-app-boilerplate-bob](https://github.com/bjonamu/ir-app-boilerplate-bob) | GraphQL & Apollo |
+
+
+```
+$ ir-app new my-awesome-app -b <ir-boilerplate>
 ```
 
 ## :heart: Special Thanks :heart:
