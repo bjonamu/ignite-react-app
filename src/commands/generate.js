@@ -18,7 +18,6 @@ const exitCodes = require('../lib/exitCodes')
 
 module.exports = {
   name: 'generate',
-  alias: ['g'],
   run: async (context) => {
     // ensure we're in a supported directory
     if (!isIrAppDirectory(process.cwd())) {
