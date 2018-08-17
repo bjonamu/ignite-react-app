@@ -50,8 +50,13 @@ module.exports = {
     process.chdir(projectName)
     log(`Switched directory to ${process.cwd()}`)
 
-    // Should be able to choose in the near future
-    const boilerplateName = 'boilerplate-adam'
+      // grab the right boilerplate
+    let boilerplateName = parameters.options.boilerplate || parameters.options.b || 'boilerplate-adam'
+
+  // If the name includes a file separator, it's probably a path. Expand it so it's the full real path here.
+    if (boilerplateName.includes(path.sep)) {
+      boilerplateName = filesystem.path(boilerplateName)
+    }
 
     log(`boilerplateName ${boilerplateName}`)
 
