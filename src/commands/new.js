@@ -40,7 +40,7 @@ module.exports = {
 
     try {
       log(`Running create-react-app`)
-      const command = trim(`create-react-app ${projectName}`)
+      const command = trim(`npx create-react-app ${projectName}`)
       await system.exec(command, { stdio: 'inherit' })
     } catch (e) {
       print.error('error running create-react-app')
@@ -50,7 +50,8 @@ module.exports = {
     process.chdir(projectName)
     log(`Switched directory to ${process.cwd()}`)
 
-      // grab the right boilerplate
+    // grab the right boilerplate
+
     let boilerplateName = parameters.options.boilerplate || parameters.options.b || 'boilerplate-adam'
 
   // If the name includes a file separator, it's probably a path. Expand it so it's the full real path here.
@@ -63,7 +64,6 @@ module.exports = {
     // let's kick off the template
     let ok = false
     try {
-      // TODO: Forward options
       const command = trim(`ir-app boilerplate-install ${boilerplateName} ${projectName}`)
       log(`running boilerplate: ${command}`)
       await system.exec(command, { stdio: 'inherit' })

@@ -11,6 +11,7 @@ const buildIgniteReactApp = () => {
   .plugins('./node_modules', { matching: 'ir-app-*', hidden: true })
   .help() // provides default for help, h, --help, -h
   .version() // provides default for version, v, --version, -v
+  .command({ name: 'love', run: toolbox => toolbox.print.info('I love Ignite React App!') })
   .create()
 }
 
@@ -32,12 +33,12 @@ module.exports = async function run (argv) {
   const commandLine = minimist(argv.slice(2))
 
   // should we show the version number & jet?
-  const hasNoArguments = isEmpty(commandLine._)
-  const hasVersionOption = commandLine.version || commandLine.v
-  if (hasNoArguments && hasVersionOption) {
-    await runtime.run({ rawCommand: 'version' })
-    return
-  }
+  // const hasNoArguments = isEmpty(commandLine._)
+  // const hasVersionOption = commandLine.version || commandLine.v
+  // if (hasNoArguments && hasVersionOption) {
+  //   await runtime.run({ rawCommand: 'version' })
+  //   return
+  // }
 
   // wtf mode shows problems with plugins, commands, and extensions
   if (commandLine.wtf) {
