@@ -28,7 +28,7 @@
   "license": "MIT",
   "dependencies": {
     "fs-jetpack": "^1.3.0",
-    "gluegun": "next",
+    "gluegun": "^2.0.7",
     "gluegun-patching": "^0.3.0",
     "minimist": "^1.2.0",
     "pretty-error": "^2.1.1",
