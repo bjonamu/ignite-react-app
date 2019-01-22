@@ -1,6 +1,6 @@
 {
   "name": "ignite-react-app",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "ignite-react-app (ir-app) CLI",
   "bin": {
     "ir-app": "bin/ignite-react-app"
@@ -41,10 +41,6 @@
     "ava": "^0.22.0",
     "babel-eslint": "^8.0.1",
     "nyc": "^11.2.1",
-    "prettier": "^1.7.4",
-    "standard": "^10.0.0"
-  },
-  "standard": {
-    "parser": "babel-eslint"
+    "prettier": "^1.7.4"
   }
 }

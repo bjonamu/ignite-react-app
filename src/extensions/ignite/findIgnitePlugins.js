@@ -6,19 +6,22 @@ const {
   propSatisfies,
   sortBy,
   prop
-} = require('ramda')
-const { startsWith } = require('ramdasauce')
+} = require('ramda');
+const { startsWith } = require('ramdasauce');
 
-module.exports = (context) => {
+module.exports = context => {
   // gluegun stuff
-  const { runtime, filesystem: { separator } } = context
+  const {
+    runtime,
+    filesystem: { separator }
+  } = context;
 
   // how to identify ignite plugins
-  const ignitePrefixed = propSatisfies(startsWith('ir-app-'), 'name')
-  const isInRightLocation = contains(`ir-app${separator}plugins`)
-  const inProjectPlugins = propSatisfies(isInRightLocation, 'directory')
-  const onlyIgnitePlugins = filter(anyPass([ignitePrefixed, inProjectPlugins]))
-  const getIgnitePlugins = pipe(onlyIgnitePlugins, sortBy(prop('name')))
+  const ignitePrefixed = propSatisfies(startsWith('ir-app-'), 'name');
+  const isInRightLocation = contains(`ir-app${separator}plugins`);
+  const inProjectPlugins = propSatisfies(isInRightLocation, 'directory');
+  const onlyIgnitePlugins = filter(anyPass([ignitePrefixed, inProjectPlugins]));
+  const getIgnitePlugins = pipe(onlyIgnitePlugins, sortBy(prop('name')));
 
   /**
    * Finds the gluegun plugins that are also ignite plugins.  These are
@@ -29,5 +32,5 @@ module.exports = (context) => {
    *
    * @returns {Plugin[]} - an array of ignite plugins
    */
-  return () => getIgnitePlugins(runtime.plugins)
-}
+  return () => getIgnitePlugins(runtime.plugins);
+};

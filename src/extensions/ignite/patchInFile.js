@@ -1,6 +1,6 @@
-const jetpack = require('fs-jetpack')
+const jetpack = require('fs-jetpack');
 
-module.exports = (context) => {
+module.exports = context => {
   /**
    * Conditionally places a string into a file before or after another string.
    * TODO: Move to infinitered/gluegun eventually? Plugin or core?
@@ -18,26 +18,26 @@ module.exports = (context) => {
    *   patchInFile('thing.js', { before: 'bar', insert: 'foo' })
    *
    */
-  function patchInFile (file, opts) {
-    const { patching } = context
+  function patchInFile(file, opts) {
+    const { patching } = context;
 
-    const data = jetpack.read(file, 'utf8')
+    const data = jetpack.read(file, 'utf8');
 
     // If the file already has insert, no-op unless forced
     // stops accidental double inserts unless you're sure you want that
-    if (data.includes(opts.insert) && !opts.force) return
+    if (data.includes(opts.insert) && !opts.force) return;
 
     // delete <string> is the same as replace <string> + insert ''
-    const replaceString = opts.delete || opts.replace
-    const newString = opts.insert || ''
+    const replaceString = opts.delete || opts.replace;
+    const newString = opts.insert || '';
 
     if (replaceString) {
       if (data.includes(replaceString)) {
         // Replace matching string with new string
-        const newContents = data.replace(replaceString, `${newString}`)
-        jetpack.write(file, newContents, { atomic: true })
+        const newContents = data.replace(replaceString, `${newString}`);
+        jetpack.write(file, newContents, { atomic: true });
       } else {
-        console.warn(`${replaceString} not found`)
+        console.warn(`${replaceString} not found`);
       }
     } else {
       // Insert before/after a particular string
@@ -46,9 +46,9 @@ module.exports = (context) => {
         opts.before || opts.after,
         newString,
         !!opts.after
-      )
+      );
     }
   }
 
-  return patchInFile
-}
+  return patchInFile;
+};

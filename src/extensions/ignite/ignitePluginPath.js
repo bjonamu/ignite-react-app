@@ -1,25 +1,25 @@
-module.exports = (pcontext) => {
+module.exports = pcontext => {
   /**
    * The current executing ignite plugin path.
    */
-  let pluginPath = null
+  let pluginPath = null;
 
   /**
    * Set the current executing ignite plugin path.
    */
-  function setIgnitePluginPath (path) {
-    pluginPath = path
+  function setIgnitePluginPath(path) {
+    pluginPath = path;
   }
 
   /**
    * Gets the path to the current running ignite plugin.
    */
-  function ignitePluginPath () {
-    return pluginPath
+  function ignitePluginPath() {
+    return pluginPath;
   }
 
   return {
     setIgnitePluginPath,
     ignitePluginPath
-  }
-}
+  };
+};
