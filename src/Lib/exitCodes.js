@@ -47,7 +47,7 @@ module.exports = {
    */
   COMPONENT_EXISTS: 8,
 
-    /**
+  /**
    * Invalid container name
    */
   CONTAINER_NAME: 9,
@@ -71,4 +71,4 @@ module.exports = {
    * An plugin bombed while installing.
    */
   PLUGIN_INSTALL: 13
-}
+};

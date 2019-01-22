@@ -1,7 +1,7 @@
 // NOTE:  this file is intentionally written with es3
 
-const Sniff = require('gluegun/sniff')
-const which = require('which')
+const Sniff = require('gluegun/sniff');
+const which = require('which');
 
 // check the node version
 if (!Sniff.isNewEnough) {
@@ -9,8 +9,8 @@ if (!Sniff.isNewEnough) {
     'Node.js 7.6+ is required to run. You have ' +
       Sniff.nodeVersion +
       '. Womp, womp.'
-  )
-  process.exit(1)
+  );
+  process.exit(1);
 }
 
 // // check for async and await
@@ -25,10 +25,10 @@ if (!Sniff.isNewEnough) {
 // Saves us 0.350s on startup over full dependency checking
 // cost: 0.010s
 try {
-  which.sync('create-react-app')
+  which.sync('create-react-app');
 } catch (e) {
   console.log(
     'Missing create-react-app. Install with `npm i -g create-react-app` and try again.'
-  )
-  process.exit(3)
+  );
+  process.exit(3);
 }

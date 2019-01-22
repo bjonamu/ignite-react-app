@@ -1,7 +1,7 @@
-const { merge } = require('ramda')
+const { merge } = require('ramda');
 
-module.exports = (context) => {
-  const { filesystem, template } = context
+module.exports = context => {
+  const { filesystem, template } = context;
 
   /**
    * Generates a file from a template with support for sporked template detection.
@@ -9,17 +9,19 @@ module.exports = (context) => {
    * @param  {{}} opts Generation options.
    * @return {string}  The generated string.
    */
-  async function generate (opts = {}) {
+  async function generate(opts = {}) {
     // checked for a sporked version
-    const sporkDirectory = `${filesystem.cwd()}/irapp/Spork/${context.plugin.name}`
-    const isSporked = filesystem.exists(`${sporkDirectory}/${opts.template}`)
+    const sporkDirectory = `${filesystem.cwd()}/irapp/Spork/${
+      context.plugin.name
+    }`;
+    const isSporked = filesystem.exists(`${sporkDirectory}/${opts.template}`);
 
     // override the directory to point to the spork directory if we found one
-    const overrides = isSporked ? { directory: sporkDirectory } : {}
+    const overrides = isSporked ? { directory: sporkDirectory } : {};
 
     // now make the call to the gluegun generate
-    return await template.generate(merge(opts, overrides))
+    return await template.generate(merge(opts, overrides));
   }
 
-  return generate
-}
+  return generate;
+};

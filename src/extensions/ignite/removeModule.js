@@ -1,4 +1,4 @@
-module.exports = (context) => {
+module.exports = context => {
   /**
    * Removes a npm-based module from the project.
    *
@@ -6,21 +6,21 @@ module.exports = (context) => {
    * @param {Object}  options - Various uninstalling flags.
    * @param {boolean} options.dev - is this a dev dependency?
    */
-  async function removeModule (moduleName, options = {}) {
-    const { print, system, ignite } = context
-    const { useYarn } = ignite
+  async function removeModule(moduleName, options = {}) {
+    const { print, system, ignite } = context;
+    const { useYarn } = ignite;
 
-    print.info(`    ${print.checkmark} uninstalling ${moduleName}`)
-    print.info(`    ${print.checkmark} removing`)
+    print.info(`    ${print.checkmark} uninstalling ${moduleName}`);
+    print.info(`    ${print.checkmark} removing`);
     // uninstall
     if (useYarn) {
-      const addSwitch = options.dev ? '--dev' : ''
-      await system.run(`yarn remove ${moduleName} ${addSwitch}`)
+      const addSwitch = options.dev ? '--dev' : '';
+      await system.run(`yarn remove ${moduleName} ${addSwitch}`);
     } else {
-      const uninstallSwitch = options.dev ? '--save-dev' : '--save'
-      await system.run(`npm rm ${moduleName} ${uninstallSwitch}`)
+      const uninstallSwitch = options.dev ? '--save-dev' : '--save';
+      await system.run(`npm rm ${moduleName} ${uninstallSwitch}`);
     }
   }
 
-  return removeModule
-}
+  return removeModule;
+};
