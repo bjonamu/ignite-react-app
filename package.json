@@ -1,6 +1,6 @@
 {
   "name": "ignite-react-app",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "ignite-react-app (ir-app) CLI",
   "bin": {
     "ir-app": "bin/ignite-react-app"
